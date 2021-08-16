@@ -11,7 +11,7 @@ namespace Mzke.Mongo
     {
         public  readonly IMongoCollection<T> _collection;
 
-        public MongoServiceBase(MongoSettings settings)
+        public MongoServiceBase(IMongoSettings settings)
         {
             // https://brahimkamel.wordpress.com/2016/05/28/configure-camel-case-resolver-for-mongodb-c-driver/
             var conventionPack = new ConventionPack { new CamelCaseElementNameConvention() };

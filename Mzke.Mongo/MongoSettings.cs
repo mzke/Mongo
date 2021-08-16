@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace Mzke.Mongo
 {
-    public  class MongoSettings
+    
+
+    public class MongoSettings : IMongoSettings
     {
-        public MongoSettings() { }
-        public  string DatabaseName { get; } = "databasename";
-        public  string ConnectionString = "mongodb://localhost:27017";
+        public string ConnectionString { get; set; } = "mongodb://localhost:27017";
+        public string DatabaseName { get; set; } = "tivus";
+    }
+
+    public interface IMongoSettings
+    {
+        string ConnectionString { get; set; }
+        string DatabaseName { get; set; }
     }
 }
